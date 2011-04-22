@@ -28,6 +28,9 @@ public class Assets {
     
     public static Texture items;  
     
+    public static void load() {
+    
+    }
     public static void playSound(Sound sound) {
         if(Settings.soundEnabled)
             sound.play(1);

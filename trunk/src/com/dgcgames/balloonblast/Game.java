@@ -3,7 +3,7 @@ package com.dgcgames.balloonblast;
 import com.badlogic.gdx.ApplicationListener;
 import com.badlogic.gdx.Gdx;
 
-public class Game implements ApplicationListener {
+public abstract class Game implements ApplicationListener {
 	Screen screen;
 	
 	public void setScreen (Screen helpScreen2) {
@@ -11,6 +11,8 @@ public class Game implements ApplicationListener {
 		screen.dispose();
 		screen = helpScreen2;
 	}
+	
+	public abstract Screen getStartScreen();
 	
     @Override
     public void create() {

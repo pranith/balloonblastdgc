@@ -68,7 +68,7 @@ public class World {
 	}
 
 	public void generateLevel() {
-		for (int i = 0; i < 2; i++)
+		for (int i = 0; i < 1; i++)
 		{
 			Balloon balloon = new Balloon(50,12 - 2 * i);
 			balloons.add(balloon);

@@ -30,12 +30,26 @@ public class WorldRenderer {
 	public void renderObjects () {			
 		batch.enableBlending();
 		batch.begin();
+		renderBalloon();
 /*		renderBob();
 		renderPlatforms();
 		renderItems();
 		renderSquirrels();
 		renderCastle();*/
 		batch.end();		
+	}
+
+	private void renderBalloon() {
+		for (int i = 0; i < world.balloons.size(); i++) {
+			Balloon balloon = world.balloons.get(i);
+			TextureRegion keyFrame = Assets.balloonAnim.getKeyFrame(balloon.stateTime, Animation.ANIMATION_LOOPING);
+			
+			float side = balloon.velocity.x < 0 ? -1 : 1;
+			if(side < 0 )
+				batch.draw(keyFrame, balloon.position.x + 0.5f, balloon.position.y - 0.5f, side * 1, 1);
+			else
+				batch.draw(keyFrame, balloon.position.x - 0.5f, balloon.position.y - 0.5f, side * 1, 1);
+		}
 	}
 
 	public void render() {

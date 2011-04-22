@@ -37,7 +37,7 @@ public class Assets {
     
     public static void load() {
     	 background = loadTexture("data/background.png");
-         backgroundRegion = new TextureRegion(background, 0, 0, 1366, 768);
+         backgroundRegion = new TextureRegion(background, 0, 0, 320, 480);
          
          itemsOld = loadTexture("data/items.png");
          balloon = loadTexture("data/balloons.png");

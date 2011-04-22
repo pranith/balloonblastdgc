@@ -14,40 +14,29 @@ public abstract class Game implements ApplicationListener {
 	
 	public abstract Screen getStartScreen();
 	
-    @Override
-    public void create() {
-            // TODO Auto-generated method stub
+	@Override public void create () {
+		screen = getStartScreen();
+	}
 
-    }
+	@Override public void resume () {
+		screen.resume();
+	}
 
-    @Override
-    public void dispose() {
-            // TODO Auto-generated method stub
-
-    }
-
-    @Override
-    public void pause() {
-            // TODO Auto-generated method stub
-
-    }
-
-    @Override
-    public void render() {
+	@Override public void render () {
 		screen.update(Gdx.graphics.getDeltaTime());
 		screen.present(Gdx.graphics.getDeltaTime());
-    }
+	}
 
-    @Override
-    public void resize(int width, int height) {
-            // TODO Auto-generated method stub
+	@Override public void resize (int width, int height) {
+		
+	}
 
-    }
+	@Override public void pause () {
+		screen.pause();
+	}
 
-    @Override
-    public void resume() {
-            // TODO Auto-generated method stub
-
-    }
+	@Override public void dispose () {
+		screen.dispose();
+	}
     
 }

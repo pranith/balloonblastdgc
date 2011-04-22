@@ -193,9 +193,9 @@ public class GameScreen extends Screen {
 		batcher.enableBlending();
 		batcher.begin();		
 		switch (state) {
-		/*case GAME_READY:
+		case GAME_READY:
 			presentReady();
-			break;*/
+			break;
 		case GAME_RUNNING:
 			presentRunning();
 			break;
@@ -212,9 +212,9 @@ public class GameScreen extends Screen {
 		batcher.end();				
 	}
 
-/*	private void presentReady () {
+	private void presentReady () {
 		batcher.draw(Assets.ready, 160 - 192 / 2, 240 - 32 / 2, 192, 32);
-	}*/
+	}
 
 	private void presentRunning () {
 		batcher.draw(Assets.pause, 320 - 64, 480 - 64, 64, 64);

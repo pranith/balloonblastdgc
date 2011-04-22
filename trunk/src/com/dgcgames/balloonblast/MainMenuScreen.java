@@ -62,7 +62,7 @@ public class MainMenuScreen extends Screen {
 				Assets.playSound(Assets.clickSound);
 				//game.setScreen(new HelpScreen(game));
 				return;
-			}
+			}*/
 			if (OverlapTester.pointInRectangle(soundBounds, touchPoint.x, touchPoint.y)) {
 				Assets.playSound(Assets.clickSound);
 				Settings.soundEnabled = !Settings.soundEnabled;
@@ -70,7 +70,7 @@ public class MainMenuScreen extends Screen {
 					Assets.music.play();
 				else
 					Assets.music.pause();
-			}*/
+			}
 		}
 	}
 

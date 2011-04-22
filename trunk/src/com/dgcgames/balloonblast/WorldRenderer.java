@@ -44,11 +44,11 @@ public class WorldRenderer {
 			Balloon balloon = world.balloons.get(i);
 			TextureRegion keyFrame = Assets.balloonAnim.getKeyFrame(balloon.stateTime, Animation.ANIMATION_LOOPING);
 			
-			float side = balloon.velocity.x < 0 ? -1 : 1;
-			if(side < 0 )
-				batch.draw(keyFrame, balloon.position.x + 0.5f, balloon.position.y - 0.5f, side * 1, 1);
-			else
-				batch.draw(keyFrame, balloon.position.x - 0.5f, balloon.position.y - 0.5f, side * 1, 1);
+			/*float side = balloon.velocity.x < 0 ? -1 : 1;
+			if(side < 0 )*/
+				batch.draw(keyFrame, balloon.position.x - 0.5f, balloon.position.y, 1, 1);
+			/*else
+				batch.draw(keyFrame, balloon.position.x - 0.5f, balloon.position.y, side * 1, 1);*/
 		}
 	}
 

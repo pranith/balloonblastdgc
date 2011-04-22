@@ -18,8 +18,10 @@ public class Assets {
     public static TextureRegion logo;
     public static TextureRegion gameOver;
     public static TextureRegion pause;
+    public static TextureRegion ready;
     public static Animation balloonAnim;
     public static BitmapFont font;
+    
     
     public static Music music;
     public static Sound hitSound;
@@ -47,7 +49,7 @@ public class Assets {
          soundOff = new TextureRegion(itemsOld, 0, 0, 64, 64);
          soundOn = new TextureRegion(itemsOld, 64, 0, 64, 64);
          pause = new TextureRegion(itemsOld, 64, 64, 64, 64);
-         
+         ready = new TextureRegion(itemsOld, 320, 224, 192, 32);
          font = new BitmapFont(Gdx.files.internal("data/font.fnt"), Gdx.files.internal("data/font.png"), false);
          
          balloonAnim = new Animation(0.2f,                                 
@@ -61,6 +63,7 @@ public class Assets {
          music.setVolume(0.5f);         
          if(Settings.soundEnabled)
              music.play();
+         releaseSound = Gdx.audio.newSound(Gdx.files.internal("data/hit.ogg"));
          hitSound = Gdx.audio.newSound(Gdx.files.internal("data/hit.ogg"));
          coinSound = Gdx.audio.newSound(Gdx.files.internal("data/coin.ogg"));
          clickSound = Gdx.audio.newSound(Gdx.files.internal("data/click.ogg"));

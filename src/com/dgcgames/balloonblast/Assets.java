@@ -23,8 +23,8 @@ public class Assets {
     
     public static Music music;
     public static Sound hitSound;
-    public static Sound missSound;		//dont have it yet
-    public static Sound releaseSound;	// dont have
+    public static Sound missSound;			//dont have it yet
+    public static Sound releaseSound;		//dont have
     public static Sound forceReleaseSound;	//dont have
     public static Sound clickSound;
     public static Sound coinSound;
@@ -37,7 +37,7 @@ public class Assets {
     
     public static void load() {
     	 background = loadTexture("data/background.png");
-         backgroundRegion = new TextureRegion(background, 0, 0, 320, 480);
+         backgroundRegion = new TextureRegion(background, 0, 0, 1024, 512);
          
          itemsOld = loadTexture("data/items.png");
          balloon = loadTexture("data/balloons.png");

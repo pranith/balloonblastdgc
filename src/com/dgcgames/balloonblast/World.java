@@ -68,9 +68,9 @@ public class World {
 	}
 
 	public void generateLevel() {
-		for (int i = 0; i < 20; i++)
+		for (int i = 0; i < 2; i++)
 		{
-			Balloon balloon = new Balloon(50, i);
+			Balloon balloon = new Balloon(50,12 - 2 * i);
 			balloons.add(balloon);
 		}
     }
@@ -79,5 +79,4 @@ public class World {
             state = WORLD_STATE_GAME_OVER;
         }
     }
-
 }

@@ -9,7 +9,12 @@ import com.badlogic.gdx.graphics.g2d.TextureRegion;
 
 public class Assets {
     public static Texture background;
-    public static Texture balloon;
+    public static Texture balloonR;
+    public static Texture balloonR_glow;
+    public static Texture balloonY;
+    public static Texture balloonY_glow;
+    public static Texture balloonG;
+    public static Texture balloonG_glow;
     public static Texture itemsOld;  
     public static TextureRegion backgroundRegion;
     public static TextureRegion soundOn;
@@ -19,7 +24,12 @@ public class Assets {
     public static TextureRegion gameOver;
     public static TextureRegion pause;
     public static TextureRegion ready;
-    public static Animation balloonAnim;
+    public static Animation balloonAnimR;
+    public static Animation balloonAnimR_glow;
+    public static Animation balloonAnimY;
+    public static Animation balloonAnimY_glow;
+    public static Animation balloonAnimG;
+    public static Animation balloonAnimG_glow;
     public static BitmapFont font;
     
     
@@ -42,7 +52,15 @@ public class Assets {
          backgroundRegion = new TextureRegion(background, 0, 0, 1024, 512);
          
          itemsOld = loadTexture("data/items.png");
-         balloon = loadTexture("data/balloons.png");
+         
+         balloonG = loadTexture("data/balloonsG_512x512.png");
+         balloonY = loadTexture("data/balloonsY_512x512.png");
+         balloonR = loadTexture("data/balloonsR_512x512.png");
+         
+         balloonG_glow = loadTexture("data/balloonsG_512x512_glow.png");
+         balloonY_glow = loadTexture("data/balloonsY_512x512_glow.png");
+         balloonR_glow = loadTexture("data/balloonsR_512x512_glow.png");
+         
          mainMenu = new TextureRegion(itemsOld, 0, 224, 300, 110);
          gameOver = new TextureRegion(itemsOld, 352, 256, 160, 96);
          logo = new TextureRegion(itemsOld, 0, 352, 274, 142);
@@ -52,11 +70,36 @@ public class Assets {
          ready = new TextureRegion(itemsOld, 320, 224, 192, 32);
          font = new BitmapFont(Gdx.files.internal("data/font.fnt"), Gdx.files.internal("data/font.png"), false);
          
-         balloonAnim = new Animation(0.2f,                                 
-                 new TextureRegion(balloon, 0, 0, 75, 210),
-                 new TextureRegion(balloon, 77, 0, 84, 210),
-                 new TextureRegion(balloon, 162, 0, 82, 210),
-                 new TextureRegion(balloon, 246, 0, 79, 210));
+         balloonAnimG = new Animation(0.4f,                                 
+                 new TextureRegion(balloonG, 0, 0, 75, 220),
+                 new TextureRegion(balloonG, 77, 0, 84, 220),
+                 new TextureRegion(balloonG, 162, 0, 82, 220),
+                 new TextureRegion(balloonG, 246, 0, 79, 220));
+         balloonAnimG_glow = new Animation(0.4f,                                 
+                 new TextureRegion(balloonG_glow, 0, 0, 75, 220),
+                 new TextureRegion(balloonG_glow, 77, 0, 84, 220),
+                 new TextureRegion(balloonG_glow, 162, 0, 82, 220),
+                 new TextureRegion(balloonG_glow, 246, 0, 79, 220));
+         balloonAnimY = new Animation(0.4f,                                 
+                 new TextureRegion(balloonY, 0, 0, 75, 220),
+                 new TextureRegion(balloonY, 77, 0, 84, 220),
+                 new TextureRegion(balloonY, 162, 0, 82, 220),
+                 new TextureRegion(balloonY, 246, 0, 79, 220));
+         balloonAnimY_glow = new Animation(0.4f,                                 
+                 new TextureRegion(balloonY_glow, 0, 0, 75, 220),
+                 new TextureRegion(balloonY_glow, 77, 0, 84, 220),
+                 new TextureRegion(balloonY_glow, 162, 0, 82, 220),
+                 new TextureRegion(balloonY_glow, 246, 0, 79, 220));
+         balloonAnimR = new Animation(0.4f,                                 
+                 new TextureRegion(balloonR, 0, 0, 75, 220),
+                 new TextureRegion(balloonR, 77, 0, 84, 220),
+                 new TextureRegion(balloonR, 162, 0, 82, 220),
+                 new TextureRegion(balloonR, 246, 0, 79, 220));
+         balloonAnimR_glow = new Animation(0.4f,                                 
+                 new TextureRegion(balloonR_glow, 0, 0, 75, 220),
+                 new TextureRegion(balloonR_glow, 77, 0, 84, 220),
+                 new TextureRegion(balloonR_glow, 162, 0, 82, 220),
+                 new TextureRegion(balloonR_glow, 246, 0, 79, 220));
          
          music = Gdx.audio.newMusic(Gdx.files.internal("data/music.mp3"));
          music.setLooping(true);

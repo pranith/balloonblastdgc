@@ -7,6 +7,8 @@ public class Balloon extends DynamicGameObject{
 	    public static final float BALLOON_HEIGHT = 0.8f;
 	    public static final int BALLOON_SCORE = 10;
 	    public static final float BALLOON_VELOCITY = 3f;
+	    public static final float BALLOON_ACCELARATION_X = 0;
+	    public static final float BALLOON_ACCELARATION_Y = 0;
 	    
 	    public boolean BALLOON_STATE_HIT = false;
 
@@ -15,6 +17,7 @@ public class Balloon extends DynamicGameObject{
 	    public Balloon(float x, float y) {
 	        super(x, y, BALLOON_WIDTH, BALLOON_HEIGHT);
 	        velocity.set(BALLOON_VELOCITY, 0);
+	        accel.set(BALLOON_ACCELARATION_X, BALLOON_ACCELARATION_Y);
 	    }
 	    
 	    public void update(float deltaTime) {

@@ -42,7 +42,7 @@ public class WorldRenderer {
 	private void renderBalloon() {
 		for (int i = 0; i < world.balloons.size(); i++) {
 			Balloon balloon = world.balloons.get(i);
-			TextureRegion keyFrame = Assets.balloonAnim.getKeyFrame(balloon.stateTime, Animation.ANIMATION_LOOPING);
+			TextureRegion keyFrame = Assets.balloonAnimR.getKeyFrame(balloon.stateTime, Animation.ANIMATION_LOOPING);
 			
 			/*float side = balloon.velocity.x < 0 ? -1 : 1;
 			if(side < 0 )*/

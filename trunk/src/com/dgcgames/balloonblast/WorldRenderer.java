@@ -46,7 +46,7 @@ public class WorldRenderer {
 			
 			/*float side = balloon.velocity.x < 0 ? -1 : 1;
 			if(side < 0 )*/
-				batch.draw(keyFrame, balloon.position.x - 0.5f, balloon.position.y, 1, 1);
+				batch.draw(keyFrame, balloon.position.x - 0.5f, balloon.position.y, 1, 1); //for rotation use a diff draw func
 			/*else
 				batch.draw(keyFrame, balloon.position.x - 0.5f, balloon.position.y, side * 1, 1);*/
 		}

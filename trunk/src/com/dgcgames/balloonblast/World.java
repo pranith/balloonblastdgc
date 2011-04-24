@@ -62,20 +62,21 @@ public class World {
     private void updateBalloon(float deltaTime) {
 		for (int i = 0; i < balloons.size(); i++) {
 			Balloon balloon = balloons.get(i);
+			if (balloon.BALLOON_MISS == true)
+				balloonsMissed++;
 			balloon.update(deltaTime);
 		}
 		
 	}
 
 	public void generateLevel() {
-		for (int i = 0; i < 3; i++)
-		{
-			Balloon balloon = new Balloon(50,12 - 2 * i);
+			Balloon balloon = new Balloon(0,10);
 			balloons.add(balloon);
-		}
     }
+	
     private void checkGameOver() {
-        if (balloonsMissed >= 25) {
+        if (balloonsMissed  >= 5) {
+        	assert(false);
             state = WORLD_STATE_GAME_OVER;
         }
     }

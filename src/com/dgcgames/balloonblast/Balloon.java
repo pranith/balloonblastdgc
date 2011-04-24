@@ -3,13 +3,13 @@ package com.dgcgames.balloonblast;
 
 
 public class Balloon extends DynamicGameObject{
-	    public static final float BALLOON_WIDTH = 0.5f;
-	    public static final float BALLOON_HEIGHT = 0.8f;
+	    public static final float BALLOON_WIDTH = 1f;
+	    public static final float BALLOON_HEIGHT = 2f;
 	    public static final int BALLOON_SCORE = 10;
 	    public static final float BALLOON_VELOCITY_X = 2f;
 	    public static final float BALLOON_VELOCITY_Y = -0.2f;
-	    public static final float BALLOON_ACCELARATION_X = 10f;
-	    public static final float BALLOON_ACCELARATION_Y = -10f;
+	    public static final float BALLOON_ACCELARATION_X = 1f;
+	    public static final float BALLOON_ACCELARATION_Y = -1f;
 	    
 	    public boolean BALLOON_STATE_HIT = false;
 
@@ -22,7 +22,7 @@ public class Balloon extends DynamicGameObject{
 	    }
 	    
 	    public void update(float deltaTime) {
-	        position.add( (float) (velocity.x * deltaTime + 0.5*accel.x*java.lang.Math.pow ( deltaTime, 2) ), (float) (velocity.y * deltaTime + 0.5*accel.y*deltaTime*deltaTime) );
+	        position.add( (float) (velocity.x * deltaTime + 0.5*accel.x*deltaTime*deltaTime), (float) (velocity.y * deltaTime + 0.5*accel.y*deltaTime*deltaTime) );
 	        bounds.x = position.x - BALLOON_WIDTH / 2;
 	        bounds.y = position.y - BALLOON_HEIGHT / 2;
 	        

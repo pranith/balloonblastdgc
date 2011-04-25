@@ -31,6 +31,7 @@ public class WorldRenderer {
 		batch.enableBlending();
 		batch.begin();
 		renderBalloon();
+		renderArrow();
 /*		renderBob();
 		renderPlatforms();
 		renderItems();
@@ -39,6 +40,13 @@ public class WorldRenderer {
 		batch.end();		
 	}
 
+	private void renderArrow(){
+		for (int i = 0; i < world.arrows.size(); i++)
+		{
+			Arrow arrow = world.arrows.get(i);
+			batch.draw(Assets.arrow, arrow.position.x, arrow.position.y, 0.3f, 2f);
+		}
+	}
 	private void renderBalloon() {
 		for (int i = 0; i < world.balloons.size(); i++) {
 			Balloon balloon = world.balloons.get(i);

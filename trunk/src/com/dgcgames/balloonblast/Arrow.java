@@ -5,12 +5,13 @@ package com.dgcgames.balloonblast;
 public class Arrow extends DynamicGameObject{
 	    public static final float ARROW_WIDTH = 0.5f;
 	    public static final float ARROW_HEIGHT = 0.8f;
-	    public static final float ARROW_VELOCITY_X = 2f;
-	    public static final float ARROW_VELOCITY_Y = 0f;
-	    public static final float ARROW_ACCELARATION_X = 10f;
-	    public static final float ARROW_ACCELARATION_Y = -10f;
+	    public static final float ARROW_VELOCITY_X = 0f;
+	    public static final float ARROW_VELOCITY_Y = 5f;
+	    public static final float ARROW_ACCELARATION_X = 0f;
+	    public static final float ARROW_ACCELARATION_Y = 0f;
 	    
 	    public boolean ARROW_STATE_HIT = false;
+
 
 	    float stateTime;
 	    
@@ -21,8 +22,12 @@ public class Arrow extends DynamicGameObject{
 	    }
 	    
 	    public void update(float deltaTime) {
-	        position.add( (float) (velocity.x * deltaTime + 0.5*accel.x*java.lang.Math.pow ( deltaTime, 2) ), (float) (velocity.y * deltaTime + 0.5*accel.y*deltaTime*deltaTime) );
+	        position.add( 0f, velocity.y * deltaTime);
+	        bounds.x = position.x + bounds.width;
+	        bounds.y = position.y - bounds.height;
 	        
+	        if (position.y > World.WORLD_HEIGHT)
+	        	ARROW_STATE_HIT = true;
 	        stateTime += deltaTime;
 	    }
 }

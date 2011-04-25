@@ -109,7 +109,10 @@ public class GameScreen extends Screen {
 
 	private void updateRunning (float deltaTime) {
 		if (Gdx.input.justTouched()) {
-			guiCam.unproject(touchPoint.set(Gdx.input.getX(), Gdx.input.getY(), 0));			
+			guiCam.unproject(touchPoint.set(Gdx.input.getX(), Gdx.input.getY(), 0));
+			
+			//System.out.println("x is  y is %f\n" + touchPoint.x +"  "+ touchPoint.y);
+			world.createArrow(touchPoint.x / 32f, touchPoint.y / 40f);
 
 			if (OverlapTester.pointInRectangle(pauseBounds, touchPoint.x, touchPoint.y)) {
 				Assets.playSound(Assets.clickSound);
@@ -126,9 +129,11 @@ public class GameScreen extends Screen {
 			if(Gdx.input.isKeyPressed(Keys.KEYCODE_DPAD_LEFT))
 				accel = 5f;
 			if(Gdx.input.isKeyPressed(Keys.KEYCODE_DPAD_RIGHT))
-				accel = -5f;
+				accel = 5f;
 			world.update(deltaTime, accel);
 		}
+		
+		
 		if (world.score != lastScore) {
 			lastScore = world.score;
 			scoreString = "SCORE: " + lastScore;

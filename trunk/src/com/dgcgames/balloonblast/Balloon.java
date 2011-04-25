@@ -14,12 +14,14 @@ public class Balloon extends DynamicGameObject{
 	    public boolean BALLOON_MISS = false;
 
 	    float stateTime;
+	    public int points;
 	    
 	    public Balloon(float x, float y) {
 	        super(x, y, BALLOON_WIDTH, BALLOON_HEIGHT);
 	        velocity.set(BALLOON_VELOCITY_X, BALLOON_VELOCITY_Y);
 	        accel.set(BALLOON_ACCELARATION_X, BALLOON_ACCELARATION_Y);
 	        POS_X = x; POS_Y = y;
+	        points = 10;
 	    }
 	    
 	    public void update(float deltaTime) {
@@ -29,7 +31,7 @@ public class Balloon extends DynamicGameObject{
 	    		BALLOON_MISS = false;
 	    	}
 	        bounds.x = position.x - BALLOON_WIDTH / 2;
-	        bounds.y = position.y - BALLOON_HEIGHT / 2;
+	        bounds.y = position.y - BALLOON_HEIGHT;
 	        velocity.x += deltaTime * accel.x;
 	        velocity.y += deltaTime * accel.y;
 	        position.add(velocity.x * deltaTime, velocity.y * deltaTime);

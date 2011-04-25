@@ -8,7 +8,7 @@ public class BalloonblastDesktop {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		new JoglApplication(new Balloonblast(), "My Game", 960, 600, false);
+		new JoglApplication(new Balloonblast(), "My Game", 1024, 768, false);
 
 	}
 

@@ -15,7 +15,9 @@ public class Assets {
     public static Texture balloonY_glow;
     public static Texture balloonG;
     public static Texture balloonG_glow;
+    public static Texture arrowTex;
     public static Texture itemsOld;  
+    public static TextureRegion arrow;
     public static TextureRegion backgroundRegion;
     public static TextureRegion soundOn;
     public static TextureRegion soundOff;
@@ -53,14 +55,15 @@ public class Assets {
          
          itemsOld = loadTexture("data/items.png");
          
+         arrowTex = loadTexture("data/arrow.png");
          balloonG = loadTexture("data/balloonsG_512x512.png");
          balloonY = loadTexture("data/balloonsY_512x512.png");
          balloonR = loadTexture("data/balloonsR_512x512.png");
-         
          balloonG_glow = loadTexture("data/balloonsG_512x512_glow.png");
          balloonY_glow = loadTexture("data/balloonsY_512x512_glow.png");
          balloonR_glow = loadTexture("data/balloonsR_512x512_glow.png");
          
+         arrow	  = new TextureRegion(arrowTex, 0, 0, 64, 281);
          mainMenu = new TextureRegion(itemsOld, 0, 224, 300, 110);
          gameOver = new TextureRegion(itemsOld, 352, 256, 160, 96);
          logo = new TextureRegion(itemsOld, 0, 352, 274, 142);
@@ -103,7 +106,7 @@ public class Assets {
          
          music = Gdx.audio.newMusic(Gdx.files.internal("data/music.mp3"));
          music.setLooping(true);
-         music.setVolume(0.5f);         
+         music.setVolume(0.15f);         
          if(Settings.soundEnabled)
              music.play();
          releaseSound = Gdx.audio.newSound(Gdx.files.internal("data/hit.ogg"));

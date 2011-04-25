@@ -62,9 +62,9 @@ public class World {
     private void updateBalloon(float deltaTime) {
 		for (int i = 0; i < balloons.size(); i++) {
 			Balloon balloon = balloons.get(i);
+			balloon.update(deltaTime);
 			if (balloon.BALLOON_MISS == true)
 				balloonsMissed++;
-			balloon.update(deltaTime);
 		}
 		
 	}
@@ -75,7 +75,7 @@ public class World {
     }
 	
     private void checkGameOver() {
-        if (balloonsMissed  >= 5) {
+        if (balloonsMissed  >= 3) {
         	assert(false);
             state = WORLD_STATE_GAME_OVER;
         }

@@ -1,5 +1,7 @@
 package com.dgcgames.balloonblast;
 
+import java.util.Random;
+
 public class Balloon extends DynamicGameObject{
 	    public static final float BALLOON_WIDTH = 1f;
 	    public static final float BALLOON_HEIGHT = 2f;
@@ -11,10 +13,12 @@ public class Balloon extends DynamicGameObject{
 	    
 	    public float POS_X, POS_Y;
 	    public boolean BALLOON_STATE_HIT = false;
-	    public boolean BALLOON_MISS = false;
-
+	    public boolean BALLOON_MISS = true;
+	    public Animation currBalloonAnim;
 	    float stateTime;
 	    public int points;
+	    
+	    public Random rand = new Random();
 	    
 	    public Balloon(float x, float y) {
 	        super(x, y, BALLOON_WIDTH, BALLOON_HEIGHT);
@@ -22,6 +26,7 @@ public class Balloon extends DynamicGameObject{
 	        accel.set(BALLOON_ACCELARATION_X, BALLOON_ACCELARATION_Y);
 	        POS_X = x; POS_Y = y;
 	        points = 10;
+	        currBalloonAnim = Assets.balloonAnimG;
 	    }
 	    
 	    public void update(float deltaTime) {
@@ -47,8 +52,39 @@ public class Balloon extends DynamicGameObject{
 	    }
 	    
 	    public void reset()
-	    {
+	    {				
+				switch ((int)rand.nextInt() % 6){
+				//switch ((int)( 6 * rand.nextDouble() ) ){
+				case 0:
+					currBalloonAnim = Assets.balloonAnimR;
+					points = 10;
+					break;
+				case 1:
+					currBalloonAnim = Assets.balloonAnimR_glow;
+					points = 20;
+					break;
+				case 2:
+					currBalloonAnim = Assets.balloonAnimY;
+					points = 10;
+					break;
+				case 3:
+					currBalloonAnim = Assets.balloonAnimY_glow;
+					points = 20;
+					break;
+				case 4:
+					currBalloonAnim = Assets.balloonAnimG;
+					points = 10;
+					break;
+				case 5:
+					currBalloonAnim = Assets.balloonAnimG_glow;
+					points = 20;
+					break;
+				default:
+					currBalloonAnim = Assets.balloonAnimG;
+					points = 10;
+				};
+				
 	    	position.set(POS_X, POS_Y);
+	    
 	    }
-}
-	 
+};

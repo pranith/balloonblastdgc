@@ -104,10 +104,10 @@ public class Assets {
                  new TextureRegion(balloonR, 162, 0, 82, 220),
                  new TextureRegion(balloonR, 246, 0, 79, 220));
          balloonAnimR_glow = new Animation(0.4f,                                 
-                 new TextureRegion(balloonR_glow, 0, 0, 75, 220),
-                 new TextureRegion(balloonR_glow, 77, 0, 84, 220),
-                 new TextureRegion(balloonR_glow, 162, 0, 82, 220),
-                 new TextureRegion(balloonR_glow, 246, 0, 79, 220));
+                 new TextureRegion(balloonR_glow, 0, 0, 78, 220),
+                 new TextureRegion(balloonR_glow, 77, 0, 89, 220),
+                 new TextureRegion(balloonR_glow, 164, 0, 80, 220),
+                 new TextureRegion(balloonR_glow, 243, 0, 86, 220));
          balloonBurst = new Animation ( 0.1f,
         		 new TextureRegion(balloonBurstingTex, 0, 0, 97, 109),
                  new TextureRegion(balloonBurstingTex, 97, 0, 97, 102),

@@ -48,7 +48,7 @@ public class WorldRenderer {
 		for (int i = 0; i < world.arrows.size(); i++)
 		{
 			Arrow arrow = world.arrows.get(i);
-			batch.draw(Assets.arrow, arrow.position.x, arrow.position.y, 0.3f, 2f);
+			batch.draw(Assets.arrow, arrow.position.x, arrow.position.y, 0.2f, 1.4f);
 		}
 	}
 	private void renderBalloon() {

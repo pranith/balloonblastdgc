@@ -204,9 +204,9 @@ public class GameScreen extends Screen {
 		case GAME_RUNNING:
 			presentRunning();
 			break;
-		/*case GAME_PAUSED:
+		case GAME_PAUSED:
 			presentPaused();
-			break;*/
+			break;
 		case GAME_LEVEL_END:
 			presentLevelEnd();
 			break;
@@ -226,10 +226,10 @@ public class GameScreen extends Screen {
 		Assets.font.draw(batcher, scoreString, 16, 480 - 20);
 	}
 
-	/*private void presentPaused () {
+	private void presentPaused () {
 		batcher.draw( Assets.pauseMenu, 160 - 192 / 2, 240 - 96 / 2, 192, 96);
 		Assets.font.draw(batcher, scoreString, 16, 480 - 20);
-	}*/
+	}
 
 	private void presentLevelEnd () {
 		String topText = "the princess is ...";

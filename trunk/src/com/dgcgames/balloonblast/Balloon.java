@@ -38,9 +38,9 @@ public class Balloon extends DynamicGameObject{
 	    	}
 	    	if (BALLOON_STATE_HIT == true)
 	    	{
-	    		if (count < 3)
+	    		if (count < 0)
 	    		{
-	    			currBalloonAnim = Assets.balloonBurst;
+	    			//currBalloonAnim = Assets.balloonBurst;
 	    			velocity.x = 0;
 	    			count++;
 	    		}
@@ -81,7 +81,7 @@ public class Balloon extends DynamicGameObject{
 			case 1:
 				currBalloonAnim = Assets.balloonAnimR_glow;
 				points = 20;
-				velocity.x *= 2;
+				velocity.x += 1f;
 				accel.x = 1f;
 				break;
 			case 2:
@@ -91,7 +91,7 @@ public class Balloon extends DynamicGameObject{
 			case 3:
 				currBalloonAnim = Assets.balloonAnimY_glow;
 				points = 20;
-				velocity.x *= 2;
+				velocity.x += 1.5f;
 				break;
 			case 4:
 				currBalloonAnim = Assets.balloonAnimG;

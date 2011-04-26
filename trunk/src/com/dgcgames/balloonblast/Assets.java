@@ -62,7 +62,7 @@ public class Assets {
          itemsOld = loadTexture("data/items.png");
          
          arrowTex = loadTexture("data/arrow.png");
-         //logoTex  = loadTexture("data/logo.png");
+         logoTex  = loadTexture("data/logo.png");
          //balloonBurstingTex = loadTexture("data/balloonBlastR.png");
          balloonG = loadTexture("data/balloonsG_512x512.png");
          balloonY = loadTexture("data/balloonsY_512x512.png");
@@ -76,8 +76,8 @@ public class Assets {
          pauseMenu = new TextureRegion(itemsOld, 224, 128, 192, 96);
          gameOver = new TextureRegion(itemsOld, 352, 256, 160, 96);
          highScoresRegion = new TextureRegion(Assets.itemsOld, 0, 257, 300, 110 / 3);
-         //logo = new TextureRegion(logoTex, 29, 42, 972, 284);
-         logo = new TextureRegion(itemsOld, 0, 352, 274, 142);
+         logo = new TextureRegion(logoTex, 0, 0, 479, 141);
+         //logo = new TextureRegion(itemsOld, 0, 352, 274, 142);
          soundOff = new TextureRegion(itemsOld, 0, 0, 64, 64);
          soundOn = new TextureRegion(itemsOld, 64, 0, 64, 64);
          pause = new TextureRegion(itemsOld, 64, 64, 64, 64);

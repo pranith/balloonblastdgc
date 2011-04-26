@@ -16,7 +16,9 @@ public class Assets {
     public static Texture balloonG;
     public static Texture balloonG_glow;
     public static Texture arrowTex;
+    public static Texture logoTex;
     public static Texture itemsOld;  
+    public static Texture balloonBurstingTex;  
     public static TextureRegion arrow;
     public static TextureRegion backgroundRegion;
     public static TextureRegion soundOn;
@@ -32,6 +34,7 @@ public class Assets {
     public static Animation balloonAnimY_glow;
     public static Animation balloonAnimG;
     public static Animation balloonAnimG_glow;
+    public static Animation balloonBurst;
     public static BitmapFont font;
     
     
@@ -56,6 +59,8 @@ public class Assets {
          itemsOld = loadTexture("data/items.png");
          
          arrowTex = loadTexture("data/arrow.png");
+         logoTex  = loadTexture("data/logo.png");
+         balloonBurstingTex = loadTexture("data/balloonBlastR.png");
          balloonG = loadTexture("data/balloonsG_512x512.png");
          balloonY = loadTexture("data/balloonsY_512x512.png");
          balloonR = loadTexture("data/balloonsR_512x512.png");
@@ -66,7 +71,7 @@ public class Assets {
          arrow	  = new TextureRegion(arrowTex, 0, 0, 64, 281);
          mainMenu = new TextureRegion(itemsOld, 0, 224, 300, 110);
          gameOver = new TextureRegion(itemsOld, 352, 256, 160, 96);
-         logo = new TextureRegion(itemsOld, 0, 352, 274, 142);
+         logo = new TextureRegion(logoTex, 29, 42, 972, 284);
          soundOff = new TextureRegion(itemsOld, 0, 0, 64, 64);
          soundOn = new TextureRegion(itemsOld, 64, 0, 64, 64);
          pause = new TextureRegion(itemsOld, 64, 64, 64, 64);
@@ -103,6 +108,10 @@ public class Assets {
                  new TextureRegion(balloonR_glow, 77, 0, 84, 220),
                  new TextureRegion(balloonR_glow, 162, 0, 82, 220),
                  new TextureRegion(balloonR_glow, 246, 0, 79, 220));
+         balloonBurst = new Animation ( 0.1f,
+        		 new TextureRegion(balloonBurstingTex, 0, 0, 97, 109),
+                 new TextureRegion(balloonBurstingTex, 97, 0, 97, 102),
+                 new TextureRegion(balloonBurstingTex, 197, 0, 97, 102));
          
          music = Gdx.audio.newMusic(Gdx.files.internal("data/music.mp3"));
          music.setLooping(true);

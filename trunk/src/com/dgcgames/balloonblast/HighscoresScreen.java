@@ -36,7 +36,7 @@ public class HighscoresScreen extends Screen {
 
 		guiCam = new OrthographicCamera(320, 480);		
 		guiCam.position.set(320 / 2, 480 / 2, 0);
-		backBounds = new Rectangle(0, 0, 64, 64);
+		backBounds = new Rectangle(0, 0, 64, 64);  
 		touchPoint = new Vector3();
 		batcher = new SpriteBatch();
 		highScores = new String[5];
@@ -44,7 +44,7 @@ public class HighscoresScreen extends Screen {
 			highScores[i] = (i + 1) + ". " + Settings.highscores[i];
 			xOffset = Math.max(Assets.font.getBounds(highScores[i]).width, xOffset);
 		}
-		xOffset = 160 - xOffset / 2 + Assets.font.getSpaceWidth() / 2;
+		xOffset = 512 - xOffset / 2 + Assets.font.getSpaceWidth() / 2;
 	}
 
 	@Override public void update (float deltaTime) {
@@ -69,12 +69,12 @@ public class HighscoresScreen extends Screen {
 
 		batcher.disableBlending();
 		batcher.begin();
-		batcher.draw(Assets.backgroundRegion, 0, 0, 320, 480);
+		batcher.draw(Assets.backgroundRegion, 0, 0, 1024, 768);
 		batcher.end();
 	
 		batcher.enableBlending();
 		batcher.begin();
-		batcher.draw(Assets.highScoresRegion, 10, 360 - 16, 300, 33);
+		batcher.draw(Assets.highScoresRegion, 400, 360 - 18, 300, 33);
 
 		float y = 230;
 		for (int i = 4; i >= 0; i--) {
@@ -82,7 +82,7 @@ public class HighscoresScreen extends Screen {
 			y += Assets.font.getLineHeight();
 		}
 
-		batcher.draw(Assets.arrow, 0, 0, 64, 64);
+		//batcher.draw(Assets.arrow, 0, 0, 64, 64);
 		//batcher.draw(Assets.balloon, 0, 0, 64, 64);
 		batcher.end();		
 	}

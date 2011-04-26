@@ -3,6 +3,7 @@ package com.dgcgames.balloonblast;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.audio.Sound;
+import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
@@ -24,8 +25,10 @@ public class Assets {
     public static TextureRegion soundOn;
     public static TextureRegion soundOff;
     public static TextureRegion mainMenu;
+    public static TextureRegion pauseMenu;
     public static TextureRegion logo;
     public static TextureRegion gameOver;
+    public static TextureRegion highScoresRegion;
     public static TextureRegion pause;
     public static TextureRegion ready;
     public static Animation balloonAnimR;
@@ -70,14 +73,17 @@ public class Assets {
          
          arrow	  = new TextureRegion(arrowTex, 0, 0, 64, 281);
          mainMenu = new TextureRegion(itemsOld, 0, 224, 300, 110);
+         pauseMenu = new TextureRegion(itemsOld, 224, 128, 192, 96);
          gameOver = new TextureRegion(itemsOld, 352, 256, 160, 96);
+         highScoresRegion = new TextureRegion(Assets.itemsOld, 0, 257, 300, 110 / 3);
          logo = new TextureRegion(logoTex, 29, 42, 972, 284);
          soundOff = new TextureRegion(itemsOld, 0, 0, 64, 64);
          soundOn = new TextureRegion(itemsOld, 64, 0, 64, 64);
          pause = new TextureRegion(itemsOld, 64, 64, 64, 64);
          ready = new TextureRegion(itemsOld, 320, 224, 192, 32);
-         font = new BitmapFont(Gdx.files.internal("data/font.fnt"), Gdx.files.internal("data/font.png"), false);
-         
+         //font = new BitmapFont(Gdx.files.internal("data/font.fnt"), Gdx.files.internal("data/font.png"), false);
+         font = new BitmapFont();
+         font.setColor(Color.BLACK);
          balloonAnimG = new Animation(0.4f,                                 
                  new TextureRegion(balloonG, 0, 0, 75, 220),
                  new TextureRegion(balloonG, 77, 0, 84, 220),
@@ -108,7 +114,7 @@ public class Assets {
                  new TextureRegion(balloonR_glow, 77, 0, 89, 220),
                  new TextureRegion(balloonR_glow, 164, 0, 80, 220),
                  new TextureRegion(balloonR_glow, 243, 0, 86, 220));
-         balloonBurst = new Animation ( 0.1f,
+         balloonBurst = new Animation ( 0.2f,
         		 new TextureRegion(balloonBurstingTex, 0, 0, 97, 109),
                  new TextureRegion(balloonBurstingTex, 97, 0, 97, 102),
                  new TextureRegion(balloonBurstingTex, 197, 0, 97, 102));

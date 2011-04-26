@@ -75,9 +75,13 @@ public class World {
     			Balloon balloon = balloons.get(j);
     			if (OverlapTester.overlapRectangles(arrow.bounds, balloon.bounds))
     			{
+    				// if hit, display hit animation
+    				Assets.playSound(Assets.hitSound);
+    				if (balloon.points == 30)
+    					balloonsMissed--;
+    				balloon.BALLOON_STATE_HIT = true;
     				balloonsHit++;
     				score += balloon.points;
-    				balloon.reset();
     			}
     		}
     		
@@ -86,7 +90,7 @@ public class World {
     
     public void createArrow(float x, float y)
     {
-    	if (arrows.size() == 0)
+    	if (arrows.size() == 0 && y < 3f)
     	{
     		Arrow arrow = new Arrow(x, y);
     		arrows.add(arrow);

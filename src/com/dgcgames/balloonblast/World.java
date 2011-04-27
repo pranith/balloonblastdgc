@@ -131,7 +131,7 @@ public class World {
     }
 	
     private void checkGameOver() {
-        if (balloonsMissed  >= 3) {
+        if (balloonsMissed  >= 10) {
         	assert(false);
             state = WORLD_STATE_GAME_OVER;
         }

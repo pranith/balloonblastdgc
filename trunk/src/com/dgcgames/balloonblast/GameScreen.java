@@ -44,7 +44,9 @@ public class GameScreen extends Screen {
 	Rectangle resumeBounds;
 	Rectangle quitBounds;
 	int lastScore;
+	int lastMissed;
 	String scoreString;
+	String arrowsLeftString;
 
 	public GameScreen (Game game) {
 		super(game);
@@ -77,6 +79,7 @@ public class GameScreen extends Screen {
 		quitBounds = new Rectangle(160 - 96, 240 - 36, 192, 36);
 		lastScore = 0;
 		scoreString = "SCORE: 0";
+		arrowsLeftString = "Lives Left: 10";
 	}
 
 	@Override public void update (float deltaTime) {
@@ -137,6 +140,10 @@ public class GameScreen extends Screen {
 		if (world.score != lastScore) {
 			lastScore = world.score;
 			scoreString = "SCORE: " + lastScore;
+		}
+		if (world.balloonsMissed != lastMissed) {
+			lastMissed = 10 - world.balloonsMissed;
+			arrowsLeftString = "Lives Left: " + lastMissed;
 		}
 		if (world.state == World.WORLD_STATE_NEXT_LEVEL) {
 			state = GAME_LEVEL_END;
@@ -224,6 +231,7 @@ public class GameScreen extends Screen {
 	private void presentRunning () {
 		batcher.draw(Assets.pause, 320 - 64, 480 - 64, 64, 64);
 		Assets.font.draw(batcher, scoreString, 16, 480 - 20);
+		Assets.font.draw(batcher, arrowsLeftString, 161, 480 - 20);
 	}
 
 	private void presentPaused () {

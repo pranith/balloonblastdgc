@@ -76,7 +76,7 @@ public class Assets {
          pauseMenu = new TextureRegion(itemsOld, 224, 128, 192, 96);
          gameOver = new TextureRegion(itemsOld, 352, 256, 160, 96);
          highScoresRegion = new TextureRegion(Assets.itemsOld, 0, 257, 300, 110 / 3);
-         logo = new TextureRegion(logoTex, 0, 0, 479, 141);
+         logo = new TextureRegion(logoTex, 0, 0, 952, 280);
          //logo = new TextureRegion(itemsOld, 0, 352, 274, 142);
          soundOff = new TextureRegion(itemsOld, 0, 0, 64, 64);
          soundOn = new TextureRegion(itemsOld, 64, 0, 64, 64);

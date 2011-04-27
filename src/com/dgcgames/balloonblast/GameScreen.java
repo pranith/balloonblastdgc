@@ -232,6 +232,12 @@ public class GameScreen extends Screen {
 	}
 
 	private void presentLevelEnd () {
+        String topText = "the princess is ...";
+        String bottomText = "in another castle!";
+        float topWidth = Assets.font.getBounds(topText).width;
+        float bottomWidth = Assets.font.getBounds(bottomText).width;
+        Assets.font.draw(batcher, topText, 160 - topWidth / 2, 480 - 40);
+        Assets.font.draw(batcher, bottomText, 160 - bottomWidth / 2, 40);  
 	}
 
 	private void presentGameOver () {

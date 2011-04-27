@@ -60,7 +60,7 @@ public class MainMenuScreen extends Screen {
 			}
 			if (OverlapTester.pointInRectangle(helpBounds, touchPoint.x, touchPoint.y)) {
 				Assets.playSound(Assets.clickSound);
-				//game.setScreen(new HelpScreen(game));
+				game.setScreen(new HelpScreen(game));
 				return;
 			}
 			if (OverlapTester.pointInRectangle(soundBounds, touchPoint.x, touchPoint.y)) {
